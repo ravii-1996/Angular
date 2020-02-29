@@ -1,0 +1,62 @@
+<div>
+  <div style="text-align: center;">
+      <h5><Strong>Custom Text Editor</Strong></h5>
+  </div>
+<div style="margin:10px ; border-style: groove;
+border-color: aliceblue;">
+<div>
+  <div class="form-group" style=" width:70px; float: left; margin-right: 10px;">
+    <!-- selector for fontsize , passing cmd and event-->
+    <select class="form-control"  (change)="font('fontSize',$event)">
+      <option value="1">10</option>
+      <option value="2">11</option>
+      <option value="3">12</option>
+      <option value="4">12</option>
+      <option value="5">13</option>
+      <option value="6">14</option>
+      <option value="7">15</option>
+    </select>
+  </div>
+  <div class="form-group" id="selector">
+      <!-- selector for header , passing event-->
+    <select class="form-control"  (change)="header($event)">
+      <option value="p">Paragraph</option>
+      <option value="h1">Heading 1</option>
+      <option value="h2">Heading 2</option>
+      <option value="h3">Heading 3</option>
+      <option value="h4">Heading 4</option>
+      <option value="h5">Heading 5</option>
+      <option value="h6">Heading 6</option>
+    </select>
+  </div>
+  <div class="form-group" id="selector">
+      <!-- selector for fontName , passing cmd and event -->
+    <select class="form-control"  (change)="font('fontName',$event)">
+      <option value="Arial">Arial</option>
+      <option value="Arial Black">Arial Black</option>
+      <option value="Courier New">Courier New</option>
+      <option value="Times New Roman">Times New Roman</option>
+    </select>
+  </div>
+</div>
+<div class="icon-bar">
+    <!-- selector for generic , passing cmd only -->
+  <button (click)="add('bold')"><i class="fa fa-bold"></i></button> 
+  <button (click)="add('italic')"><i class="fa fa-italic"></i></button> 
+  <button (click)="add('underline')"><i class="fa fa-underline"></i></button>
+  <button (click)="add('undo')"><i class="fa fa-arrow-left"></i></button>
+  <button (click)="add('redo')"><i class="fa fa-arrow-right"></i></button>
+  <button (click)="add('justifyLeft')"><i class="	fa fa-align-left"></i></button>
+  <button (click)="add('justifyRight')"><i class="	fa fa-align-right"></i></button>
+  <button (click)="add('justifyFull')"><i class="fa fa-align-justify"></i></button>
+  <button (click)="add('justifyCenter')"><i class="fa fa-align-center"></i></button>
+  <button (click)="add('insertOrderedList')"><i class="fa fa-list-ol"></i></button>
+  <button (click)="add('insertUnorderedList')"><i class="fa fa-list-ul"></i></button>  
+</div>
+  <!-- Using contenteditable bcz in textarea we can work only with plain text-->
+  <div id=textBox contenteditable="true">
+  </div>
+</div>
+<!-- Sumit button to fetch all the data. -->
+<button class="btn btn-secondary" style="margin: 10px; width: 100px; padding:5px"(click)=fetch()>Submit</button>
+</div>
